@@ -353,8 +353,10 @@ const NextarWebsite = () => {
                     {step.icon}
                   </div>
                   <h3 className="text-xl font-bold">{step.title}</h3>
-                  <div className="border-t border-zinc-600 my-4"></div>
-                  <p className="text-slate-300 mt-auto">{step.description}</p>
+                  <div className="mt-auto">
+                    <div className="border-t border-zinc-600 mb-4"></div>
+                    <p className="text-slate-300">{step.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
