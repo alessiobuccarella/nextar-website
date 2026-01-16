@@ -658,7 +658,7 @@ const NextarWebsite = () => {
                 ].map((testimonial, index) => (
                   <div 
                     key={`${setIndex}-${index}`} 
-                    className="flex-shrink-0 w-[400px] bg-zinc-800 backdrop-blur-sm p-8 rounded-2xl border border-zinc-700 hover:border-orange-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/20 flex flex-col min-h-[320px]"
+                    className="flex-shrink-0 w-[280px] md:w-[400px] bg-zinc-800 backdrop-blur-sm p-8 rounded-2xl border border-zinc-700 hover:border-orange-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/20 flex flex-col min-h-[380px] md:min-h-[320px]"
                   >
                     <div className="flex-grow">
                       <div className="flex gap-1 text-orange-400 mb-6">
