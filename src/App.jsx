@@ -268,20 +268,19 @@ const NextarWebsite = () => {
               </div>
             </div>
 
-            <p className="text-xl md:text-2xl text-slate-300 mb-5 mx-auto">
-              Comunichiamo aziende. Costruiamo crescita.
-              Strategia, contenuti e performance. Da oltre 10 anni.
+            <p className="text-2xl md:text-2xl text-slate-300 mb-5 mx-auto">
+              Comunichiamo aziende. Costruiamo crescita. Strategia, contenuti e performance. Da oltre 10 anni.
             </p>
             <p className="text-xl text-slate-300 max-w-3xl mb-7 mx-auto" data-animate>
               Affianchiamo imprese e professionisti con piani di comunicazione completi:<br />
               strategia, produzione video, gestione social e campagne di crescita.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-7">
-              <button onClick={() => scrollToSection('contatti')} className="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 rounded-lg text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-7">
+              <button onClick={() => scrollToSection('contatti')} className="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 rounded-lg text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2 w-auto">
                 Richiedi Consulenza Gratuita <ArrowRight />
               </button>
-              <button onClick={() => scrollToSection('prezzi')} className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 px-6 py-3 rounded-lg text-base font-semibold hover:bg-zinc-700/50 transition-all duration-300">
+              <button onClick={() => scrollToSection('prezzi')} className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 px-6 py-3 rounded-lg text-base font-semibold hover:bg-zinc-700/50 transition-all duration-300 w-auto">
                 Piani e Prezzi
               </button>
             </div>
@@ -652,11 +651,11 @@ const NextarWebsite = () => {
             <p className="text-xl md:text-2xl mb-10 text-orange-100 max-w-3xl mx-auto">
               Richiedi una consulenza gratuita e scopri come possiamo trasformare la tua presenza digitale in risultati concreti.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-600 px-6 py-3 rounded-lg text-base font-bold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="bg-white text-orange-600 px-6 py-3 rounded-lg text-base font-bold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 w-auto">
                 Richiedi Consulenza Gratuita <ArrowRight />
               </button>
-              <button onClick={() => scrollToSection('prezzi')} className="bg-orange-700 border-2 border-white/20 px-6 py-3 rounded-lg text-base font-bold hover:bg-orange-800 transition-all duration-300 flex items-center justify-center gap-2">
+              <button onClick={() => scrollToSection('prezzi')} className="bg-orange-700 border-2 border-white/20 px-6 py-3 rounded-lg text-base font-bold hover:bg-orange-800 transition-all duration-300 flex items-center justify-center gap-2 w-auto">
                 Piani e Prezzi
               </button>
             </div>
