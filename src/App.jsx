@@ -310,22 +310,22 @@ const NextarWebsite = () => {
             </div>
 
             {/* Grid Statistiche */}
-            <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
-              <div className="p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{clientiCount}+</div>
-                <div className="text-slate-400 mt-2 font-medium">Clienti Soddisfatti</div>
+            <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 max-w-4xl mx-auto">
+              <div className="p-4 md:p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
+                <div className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{clientiCount}+</div>
+                <div className="text-sm md:text-base text-slate-400 mt-1 md:mt-2 font-medium">Clienti Soddisfatti</div>
               </div>
-              <div className="p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{impressioniCount}M+</div>
-                <div className="text-slate-400 mt-2 font-medium">Totale Impressioni</div>
+              <div className="p-4 md:p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
+                <div className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{impressioniCount}M+</div>
+                <div className="text-sm md:text-base text-slate-400 mt-1 md:mt-2 font-medium">Totale Impressioni</div>
               </div>
-              <div className="p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">24/7</div>
-                <div className="text-slate-400 mt-2 font-medium">Supporto Dedicato</div>
+              <div className="p-4 md:p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
+                <div className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">24/7</div>
+                <div className="text-sm md:text-base text-slate-400 mt-1 md:mt-2 font-medium">Supporto Dedicato</div>
               </div>
-              <div className="p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{roiCount}%</div>
-                <div className="text-slate-400 mt-2 font-medium">ROI Medio Clienti</div>
+              <div className="p-4 md:p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
+                <div className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{roiCount}%</div>
+                <div className="text-sm md:text-base text-slate-400 mt-1 md:mt-2 font-medium">ROI Medio Clienti</div>
               </div>
             </div>
           </div>
