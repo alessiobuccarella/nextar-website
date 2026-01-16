@@ -347,13 +347,15 @@ const NextarWebsite = () => {
               }
             ].map((step, index) => (
               <div key={index} className="relative group" data-animate-block data-delay={index + 1}>
-                <div className="bg-zinc-800/50 backdrop-blur-sm p-8 rounded-2xl border border-zinc-700 hover:border-orange-500/50 transition-all duration-300 h-full flex flex-col">
-                  <div className="text-6xl font-bold text-orange-500/20 group-hover:text-orange-400 transition-colors duration-300 mb-4">{step.number}</div>
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
-                    {step.icon}
+                <div className="bg-zinc-800/50 backdrop-blur-sm p-8 rounded-2xl border border-zinc-700 hover:border-orange-500/50 transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="text-6xl font-bold text-orange-500/20 group-hover:text-orange-400 transition-colors duration-300 mb-4">{step.number}</div>
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                      {step.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">{step.title}</h3>
                   </div>
-                  <h3 className="text-xl font-bold">{step.title}</h3>
-                  <div className="mt-auto">
+                  <div>
                     <div className="border-t border-zinc-600 mb-4"></div>
                     <p className="text-slate-300">{step.description}</p>
                   </div>
