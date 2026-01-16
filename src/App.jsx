@@ -295,7 +295,7 @@ const NextarWebsite = () => {
             <p className="text-2xl md:text-2xl text-slate-300 mb-5 mx-auto">
               Comunichiamo aziende. Costruiamo crescita. Strategia, contenuti e performance. Da oltre 10 anni.
             </p>
-            <p className="text-xl text-slate-300 max-w-3xl mb-7 mx-auto" data-animate>
+            <p className="text-xl text-slate-300 max-w-3xl mb-7 mx-auto">
               Affianchiamo imprese e professionisti con piani di comunicazione completi:<br />
               strategia, produzione video, gestione social e campagne di crescita.
             </p>
