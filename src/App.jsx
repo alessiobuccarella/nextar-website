@@ -13,6 +13,10 @@ const NextarWebsite = () => {
   const statsRef = useRef(null);
   const counterTimerRef = useRef(null);
 
+  // Stato per card espanse su mobile
+  const [expandedServiceCard, setExpandedServiceCard] = useState(null);
+  const [expandedPricingCard, setExpandedPricingCard] = useState(null);
+
   // Animazione contatori (bidirezionale come le altre animazioni)
   useEffect(() => {
     const statsObserver = new IntersectionObserver(
@@ -311,21 +315,21 @@ const NextarWebsite = () => {
 
             {/* Grid Statistiche */}
             <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto px-12 md:px-0">
-              <div className="px-1.5 py-4 md:p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
-                <div className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{clientiCount}+</div>
-                <div className="text-slate-400 mt-2 font-medium">Clienti Soddisfatti</div>
+              <div className="px-1.5 py-1.5 md:px-3 md:py-3 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
+                <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{clientiCount}+</div>
+                <div className="text-xs md:text-base text-slate-400 mt-0.5 md:mt-1 font-medium">Clienti Soddisfatti</div>
               </div>
-              <div className="px-1.5 py-4 md:p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
-                <div className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{impressioniCount}M+</div>
-                <div className="text-slate-400 mt-2 font-medium">Totale Impressioni</div>
+              <div className="px-1.5 py-1.5 md:px-3 md:py-3 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
+                <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{impressioniCount}M+</div>
+                <div className="text-xs md:text-base text-slate-400 mt-0.5 md:mt-1 font-medium">Totale Impressioni</div>
               </div>
-              <div className="px-1.5 py-4 md:p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
-                <div className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">24/7</div>
-                <div className="text-slate-400 mt-2 font-medium">Supporto Dedicato</div>
+              <div className="px-1.5 py-1.5 md:px-3 md:py-3 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
+                <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">24/7</div>
+                <div className="text-xs md:text-base text-slate-400 mt-0.5 md:mt-1 font-medium">Supporto Dedicato</div>
               </div>
-              <div className="px-1.5 py-4 md:p-6 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
-                <div className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{roiCount}%</div>
-                <div className="text-slate-400 mt-2 font-medium">ROI Medio Clienti</div>
+              <div className="px-1.5 py-1.5 md:px-3 md:py-3 bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-700/50">
+                <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">{roiCount}%</div>
+                <div className="text-xs md:text-base text-slate-400 mt-0.5 md:mt-1 font-medium">ROI Medio Clienti</div>
               </div>
             </div>
           </div>
@@ -437,8 +441,18 @@ const NextarWebsite = () => {
                 gradient: "from-orange-400 to-orange-600"
               }
             ].map((service, index) => (
-              <div key={index} className={`group relative hover:z-20 md:col-span-2 ${index === 3 ? 'lg:col-start-2' : ''} ${index === 4 ? 'md:col-start-2 lg:col-start-auto' : ''}`} data-animate-block>
-                <div className="bg-zinc-800/50 backdrop-blur-sm p-8 rounded-2xl border border-zinc-700 group-hover:opacity-0 group-hover:invisible transition-all duration-300 h-full relative">
+              <div
+                key={index}
+                className={`group relative hover:z-20 md:col-span-2 ${index === 3 ? 'lg:col-start-2' : ''} ${index === 4 ? 'md:col-start-2 lg:col-start-auto' : ''} ${expandedServiceCard === index ? 'z-20' : ''}`}
+                data-animate-block
+                onClick={(e) => {
+                  // Solo su mobile (sotto 768px)
+                  if (window.innerWidth < 768) {
+                    setExpandedServiceCard(expandedServiceCard === index ? null : index);
+                  }
+                }}
+              >
+                <div className={`bg-zinc-800/50 backdrop-blur-sm p-8 rounded-2xl border border-zinc-700 md:group-hover:opacity-0 md:group-hover:invisible transition-all duration-300 h-full relative ${expandedServiceCard === index ? 'opacity-0 invisible' : ''}`}>
                   <ArrowDown className="absolute top-4 right-4 text-orange-400 w-6 h-6" />
                   <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
                     {service.icon}
@@ -449,8 +463,8 @@ const NextarWebsite = () => {
                   </div>
                 </div>
 
-                {/* Overlay espanso visibile solo all'hover */}
-                <div className="absolute top-0 left-0 right-0 bg-zinc-800 backdrop-blur-sm p-8 rounded-2xl border border-orange-500/50 shadow-2xl shadow-orange-500/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
+                {/* Overlay espanso visibile all'hover su desktop o al click su mobile */}
+                <div className={`absolute top-0 left-0 right-0 bg-zinc-800 backdrop-blur-sm p-8 rounded-2xl border border-orange-500/50 shadow-2xl shadow-orange-500/20 transition-all duration-300 z-10 ${expandedServiceCard === index ? 'opacity-100 visible' : 'opacity-0 invisible md:group-hover:opacity-100 md:group-hover:visible'}`}>
                   <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
                     {service.icon}
                   </div>
@@ -522,7 +536,18 @@ const NextarWebsite = () => {
                 popular: false
               }
             ].map((plan, index) => (
-              <div key={index} data-animate-block data-delay={index + 1} className={`group relative bg-zinc-800/50 backdrop-blur-sm p-8 rounded-3xl border ${plan.popular ? 'border-orange-500 shadow-2xl shadow-orange-500/30 scale-105' : 'border-zinc-700 hover:scale-105'} transition-all duration-300`}>
+              <div
+                key={index}
+                data-animate-block
+                data-delay={index + 1}
+                className={`group relative bg-zinc-800/50 backdrop-blur-sm p-8 rounded-3xl border ${plan.popular ? 'border-orange-500 shadow-2xl shadow-orange-500/30 scale-105' : `border-zinc-700 md:hover:scale-105 ${expandedPricingCard === index ? 'scale-105' : ''}`} transition-all duration-300`}
+                onClick={() => {
+                  // Solo su mobile (sotto 768px) e solo se non è popolare
+                  if (window.innerWidth < 768 && !plan.popular) {
+                    setExpandedPricingCard(expandedPricingCard === index ? null : index);
+                  }
+                }}
+              >
                 {plan.popular && (
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                     PIÙ POPOLARE
