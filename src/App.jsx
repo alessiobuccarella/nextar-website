@@ -209,7 +209,7 @@ const NextarWebsite = () => {
                 Cosa Facciamo
               </button>
               <button onClick={() => scrollToSection('servizi')} className="text-white hover:text-orange-400 transition-colors duration-200 font-medium text-base">
-                Il Nostro Metodo
+                Metodo Nextar
               </button>
               <button onClick={() => scrollToSection('prezzi')} className="text-white hover:text-orange-400 transition-colors duration-200 font-medium text-base">
                 Piani e Prezzi
@@ -232,7 +232,7 @@ const NextarWebsite = () => {
           {isMenuOpen && (
             <div className="lg:hidden mt-4 pb-4 space-y-3 p-4">
               <button onClick={() => scrollToSection('processo')} className="block w-full text-left text-white hover:text-orange-400 transition-colors py-2 font-medium">Cosa Facciamo</button>
-              <button onClick={() => scrollToSection('servizi')} className="block w-full text-left text-white hover:text-orange-400 transition-colors py-2 font-medium">Il Nostro Metodo</button>
+              <button onClick={() => scrollToSection('servizi')} className="block w-full text-left text-white hover:text-orange-400 transition-colors py-2 font-medium">Metodo Nextar</button>
               <button onClick={() => scrollToSection('prezzi')} className="block w-full text-left text-white hover:text-orange-400 transition-colors py-2 font-medium">Piani e Prezzi</button>
               <button onClick={() => scrollToSection('recensioni')} className="block w-full text-left text-white hover:text-orange-400 transition-colors py-2 font-medium">Recensioni</button>
               <button onClick={() => scrollToSection('contatti')} className="w-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 rounded-lg font-semibold text-base text-white hover:text-black">Contattaci</button>
@@ -393,7 +393,7 @@ const NextarWebsite = () => {
       <section id="servizi" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-medium mb-6" data-animate-title>Il Nostro Metodo</h2>
+            <h2 className="text-4xl md:text-6xl font-medium mb-6" data-animate-title>Metodo Nextar</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto" data-animate>
               Analizziamo il business, costruiamo la strategia, produciamo i contenuti, li distribuiamo alle persone giuste e ottimizziamo tutto sui risultati.
             </p>
