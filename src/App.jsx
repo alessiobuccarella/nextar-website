@@ -406,35 +406,35 @@ const NextarWebsite = () => {
           <div className="grid md:grid-cols-4 lg:grid-cols-6 gap-8">
             {[
               {
-                icon: <BarChart3 />,
+                icon: <BarChart3 className="w-10 h-10" />,
                 title: "Analisi",
                 description: "Ogni progetto Nextar parte da un'analisi approfondita. Prima di parlare di contenuti o campagne, capiamo chi sei, dove sei oggi e cosa non sta funzionando. Analizziamo il tuo brand, il mercato in cui operi e il comportamento del tuo pubblico. Studiamo i competitor, i tuoi canali social, il funnel di acquisizione e i punti in cui stai perdendo opportunità e budget. L'obiettivo non è \"fare meglio sui social\", ma individuare le vere leve di crescita. Questa fase ci permette di eliminare ipotesi e lavorare su dati reali, trasformando la confusione iniziale in una direzione chiara.",
                 output: "una diagnosi di comunicazione che evidenzia problemi, opportunità e priorità.",
                 gradient: "from-orange-500 to-orange-600"
               },
               {
-                icon: <Target />,
+                icon: <Target className="w-10 h-10" />,
                 title: "Strategia",
                 description: "Una volta capito il contesto, costruiamo la strategia. Qui decidiamo cosa dire, a chi dirlo, come farlo e perché funziona. Definiamo il posizionamento del brand, i messaggi chiave da comunicare, il tone of voice e il piano editoriale più adatto agli obiettivi. Progettiamo il funnel di acquisizione, collegando contenuti, traffico e conversioni in modo coerente. La strategia è ciò che evita sprechi di tempo e contenuti casuali. Ogni scelta ha un motivo e ogni contenuto ha una funzione precisa.",
                 output: "un piano di comunicazione strutturato, misurabile e orientato ai risultati.",
                 gradient: "from-orange-600 to-amber-600"
               },
               {
-                icon: <Video />,
+                icon: <Video className="w-10 h-10" />,
                 title: "Produzione",
                 description: "La strategia prende forma attraverso i contenuti. In questa fase Nextar realizza tutto ciò che serve per comunicare in modo efficace e coerente. Produciamo video, reel, foto, copy e grafiche pensati per attirare l'attenzione, trasmettere valore e guidare l'utente all'azione. Ogni contenuto è progettato per il canale giusto e per il pubblico giusto, non per \"riempire il feed\". Qui qualità e strategia lavorano insieme: creatività senza improvvisazione.",
                 output: "contenuti pronti per essere pubblicati e distribuiti.",
                 gradient: "from-amber-500 to-orange-500"
               },
               {
-                icon: <Share2 />,
+                icon: <Share2 className="w-10 h-10" />,
                 title: "Distribuzione",
                 description: "È qui che nasce il vero valore. Distribuire non significa semplicemente pubblicare, ma far arrivare i contenuti alle persone giuste, nel momento giusto e con il giusto volume. Selezioniamo i canali più efficaci, definiamo il timing di pubblicazione, attiviamo campagne a pagamento quando serve, impostiamo strategie di retargeting e collaborazioni con pagine o creator rilevanti. Massimizziamo ogni contenuto riutilizzandolo su più piattaforme. Un contenuto visto da poche persone sbagliate non serve a nulla. Lo stesso contenuto, visto da migliaia di persone giuste, genera risultati.",
                 output: "traffico qualificato, contatti e vendite.",
                 gradient: "from-orange-500 to-red-500"
               },
               {
-                icon: <TrendingUp />,
+                icon: <TrendingUp className="w-10 h-10" />,
                 title: "Ottimizzazione",
                 description: "Nulla viene lasciato al caso. Monitoriamo costantemente i dati per capire cosa funziona davvero e cosa no. Analizziamo performance, costi, conversioni e comportamenti degli utenti. Individuiamo dove il budget è sprecato e dove, invece, sta generando valore. Sulla base dei dati ottimizziamo contenuti, copy, formati, targeting e investimenti. Il metodo Nextar non è statico: evolve continuamente per migliorare le performance nel tempo.",
                 output: "crescita costante e miglioramento continuo dei risultati.",
