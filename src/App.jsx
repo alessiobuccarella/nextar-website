@@ -697,8 +697,8 @@ const NextarWebsite = () => {
               <button className="bg-white text-orange-600 px-6 py-3 rounded-lg text-base font-bold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 w-auto">
                 Richiedi Consulenza Gratuita <ArrowRight />
               </button>
-              <button onClick={() => scrollToSection('prezzi')} className="bg-orange-700 border-2 border-white/20 px-6 py-3 rounded-lg text-base font-bold hover:bg-orange-800 transition-all duration-300 flex items-center justify-center gap-2 w-auto">
-                Piani e Prezzi
+              <button className="bg-orange-700 border-2 border-white/20 px-6 py-3 rounded-lg text-base font-bold hover:bg-orange-800 transition-all duration-300 flex items-center justify-center gap-2 w-auto">
+                Inviaci un'email <ArrowRight />
               </button>
             </div>
             <p className="mt-8 text-orange-100">
