@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, Check, Star, ArrowRight, Sparkles, Target, Megaphone, TrendingUp, Video, Globe, Share2, BarChart3, Zap, Users } from 'lucide-react';
+import { Menu, X, Check, Star, ArrowRight, ArrowDown, Sparkles, Target, Megaphone, TrendingUp, Video, Globe, Share2, BarChart3, Zap, Users } from 'lucide-react';
 
 const NextarWebsite = () => {
   // STATO - Gestisce i dati dinamici del sito
@@ -399,51 +399,69 @@ const NextarWebsite = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 lg:grid-cols-6 gap-8">
             {[
               {
-                icon: "TBD",
+                icon: <BarChart3 />,
                 title: "Analisi",
-                description: "TBD",
+                description: "Ogni progetto Nextar parte da un'analisi approfondita. Prima di parlare di contenuti o campagne, capiamo chi sei, dove sei oggi e cosa non sta funzionando. Analizziamo il tuo brand, il mercato in cui operi e il comportamento del tuo pubblico. Studiamo i competitor, i tuoi canali social, il funnel di acquisizione e i punti in cui stai perdendo opportunità e budget. L'obiettivo non è \"fare meglio sui social\", ma individuare le vere leve di crescita. Questa fase ci permette di eliminare ipotesi e lavorare su dati reali, trasformando la confusione iniziale in una direzione chiara.",
+                output: "una diagnosi di comunicazione che evidenzia problemi, opportunità e priorità.",
                 gradient: "from-orange-500 to-orange-600"
               },
               {
-                icon: "TBD",
+                icon: <Target />,
                 title: "Strategia",
-                description: "TBD",
+                description: "Una volta capito il contesto, costruiamo la strategia. Qui decidiamo cosa dire, a chi dirlo, come farlo e perché funziona. Definiamo il posizionamento del brand, i messaggi chiave da comunicare, il tone of voice e il piano editoriale più adatto agli obiettivi. Progettiamo il funnel di acquisizione, collegando contenuti, traffico e conversioni in modo coerente. La strategia è ciò che evita sprechi di tempo e contenuti casuali. Ogni scelta ha un motivo e ogni contenuto ha una funzione precisa.",
+                output: "un piano di comunicazione strutturato, misurabile e orientato ai risultati.",
                 gradient: "from-orange-600 to-amber-600"
               },
               {
-                icon: "TBD",
+                icon: <Video />,
                 title: "Produzione",
-                description: "TBD",
+                description: "La strategia prende forma attraverso i contenuti. In questa fase Nextar realizza tutto ciò che serve per comunicare in modo efficace e coerente. Produciamo video, reel, foto, copy e grafiche pensati per attirare l'attenzione, trasmettere valore e guidare l'utente all'azione. Ogni contenuto è progettato per il canale giusto e per il pubblico giusto, non per \"riempire il feed\". Qui qualità e strategia lavorano insieme: creatività senza improvvisazione.",
+                output: "contenuti pronti per essere pubblicati e distribuiti.",
                 gradient: "from-amber-500 to-orange-500"
               },
               {
-                icon: "TBD",
+                icon: <Share2 />,
                 title: "Distribuzione",
-                description: "TBD",
+                description: "È qui che nasce il vero valore. Distribuire non significa semplicemente pubblicare, ma far arrivare i contenuti alle persone giuste, nel momento giusto e con il giusto volume. Selezioniamo i canali più efficaci, definiamo il timing di pubblicazione, attiviamo campagne a pagamento quando serve, impostiamo strategie di retargeting e collaborazioni con pagine o creator rilevanti. Massimizziamo ogni contenuto riutilizzandolo su più piattaforme. Un contenuto visto da poche persone sbagliate non serve a nulla. Lo stesso contenuto, visto da migliaia di persone giuste, genera risultati.",
+                output: "traffico qualificato, contatti e vendite.",
                 gradient: "from-orange-500 to-red-500"
               },
               {
-                icon: "TBD",
+                icon: <TrendingUp />,
                 title: "Ottimizzazione",
-                description: "TBD",
+                description: "Nulla viene lasciato al caso. Monitoriamo costantemente i dati per capire cosa funziona davvero e cosa no. Analizziamo performance, costi, conversioni e comportamenti degli utenti. Individuiamo dove il budget è sprecato e dove, invece, sta generando valore. Sulla base dei dati ottimizziamo contenuti, copy, formati, targeting e investimenti. Il metodo Nextar non è statico: evolve continuamente per migliorare le performance nel tempo.",
+                output: "crescita costante e miglioramento continuo dei risultati.",
                 gradient: "from-orange-400 to-orange-600"
-              },
-              {
-                icon: "TBD",
-                title: "Risultati",
-                description: "TBD",
-                gradient: "from-orange-600 to-amber-500"
               }
             ].map((service, index) => (
-              <div key={index} className="group bg-zinc-800/50 backdrop-blur-sm p-8 rounded-2xl border border-zinc-700 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/20" data-animate-block>
-                <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  {service.icon}
+              <div key={index} className={`group relative hover:z-20 md:col-span-2 ${index === 3 ? 'lg:col-start-2' : ''} ${index === 4 ? 'md:col-start-2 lg:col-start-auto' : ''}`} data-animate-block>
+                <div className="bg-zinc-800/50 backdrop-blur-sm p-8 rounded-2xl border border-zinc-700 group-hover:opacity-0 group-hover:invisible transition-all duration-300 h-full relative">
+                  <ArrowDown className="absolute top-4 right-4 text-orange-400 w-6 h-6" />
+                  <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <div className="max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-zinc-700">
+                    <p className="text-slate-300 leading-relaxed line-clamp-3 text-justify">{service.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-orange-400 transition-colors">{service.title}</h3>
-                <p className="text-slate-300 leading-relaxed">{service.description}</p>
+
+                {/* Overlay espanso visibile solo all'hover */}
+                <div className="absolute top-0 left-0 right-0 bg-zinc-800 backdrop-blur-sm p-8 rounded-2xl border border-orange-500/50 shadow-2xl shadow-orange-500/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
+                  <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-orange-400">{service.title}</h3>
+                  <div className="max-h-[70vh] overflow-y-auto hide-scrollbar">
+                    <p className="text-slate-300 leading-relaxed text-justify">{service.description}</p>
+                    <p className="text-slate-300 leading-relaxed text-justify mt-4">
+                      <span className="font-bold">Output:</span> {service.output}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -460,12 +478,12 @@ const NextarWebsite = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               {
                 name: "Nextar Core",
                 price: "499",
-                description: "Ideale per piccole imprese e startup",
+                
                 features: [
                   "Analisi approfondita del brand e del target",
                   "Strategia di comunicazione personalizzata",
@@ -477,7 +495,7 @@ const NextarWebsite = () => {
               {
                 name: "Nextar Pro",
                 price: "1499",
-                description: "Il più completo per aziende in crescita",
+                
                 features: [
                   "Tutto di NEXTAR CORE",
                   "Gestione operativa dei social",
@@ -491,7 +509,7 @@ const NextarWebsite = () => {
               {
                 name: "Nextar Elite",
                 price: "3499",
-                description: "Soluzione su misura per grandi aziende",
+                
                 features: [
                   "Tutto di NEXTAR CORE + PRO",
                   "Creazione e pubblicazione di 5 Reels in totale a settimana",
@@ -510,8 +528,8 @@ const NextarWebsite = () => {
                     PIÙ POPOLARE
                   </div>
                 )}
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-slate-400 mb-4">{plan.description}</p>
+                <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
+        
                 <div className="mb-4">
                   {plan.price !== "Custom" ? (
                     <>
